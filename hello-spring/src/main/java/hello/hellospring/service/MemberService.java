@@ -9,12 +9,14 @@ import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
-@Service
 public class MemberService {
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
     /*
     * 회원가입
      */
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
     public Long join(Member member) {
         // 같은 이름 중복 X 회원
         validateDuplicateMember(member); // 중복회원 검증
