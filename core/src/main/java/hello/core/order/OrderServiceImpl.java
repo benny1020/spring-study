@@ -3,14 +3,13 @@ package hello.core.order;
 import hello.core.discount.DiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
-import hello.core.member.MemoryMemberRepository;
 
-public class OrderServerImpl implements OrderService{
+public class OrderServiceImpl implements OrderService{
 
     private final MemberRepository memberRepository;
     private DiscountPolicy discountPolicy; // 인터페이스에만 의존
 
-    public OrderServerImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
